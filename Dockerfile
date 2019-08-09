@@ -1,4 +1,4 @@
-FROM cypress/base:12.1.0
+FROM cypress/base:12.6.0
 
 LABEL version="1.0.0"
 LABEL repository="https://github.com/kingscooty/actions-yarn-cy"
