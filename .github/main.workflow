@@ -33,7 +33,7 @@ action "Docker Build" {
 # action "Docker Tag" {
 #   needs = "Docker Build"
 #   uses = "actions/docker/tag@master"
-#   args = "actions-yarn nuxt/actions-yarn --no-latest"
+#   args = "actions-yarn kingscooty/actions-yarn-cy --no-latest"
 # }
 
 # action "Docker Login" {
@@ -48,5 +48,5 @@ action "Docker Build" {
 # action "Docker Push" {
 #   needs = ["Docker Tag", "Docker Login"]
 #   uses = "actions/docker/cli@master"
-#   args = "push nuxt/actions-yarn"
+#   args = "push kingscooty/actions-yarn-cy"
 # }

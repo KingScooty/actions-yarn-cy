@@ -1,4 +1,4 @@
-# GitHub Action for Yarn
+# GitHub Action for Yarn + Cypress
 
 This Action for [yarn](https://yarnpkg.com/en/) enables arbitrary actions with the `yarn` command-line client, including testing packages and publishing to a registry.
 
@@ -13,13 +13,13 @@ workflow "Build, Test, and Publish" {
 }
 
 action "Build" {
-  uses = "nuxt/actions-yarn@master"
+  uses = "kingscooty/actions-yarn-cy@master"
   args = "install"
 }
 
 action "Test" {
   needs = "Build"
-  uses = "nuxt/actions-yarn@master"
+  uses = "kingscooty/actions-yarn-cy@master"
   args = "test"
 }
 
@@ -32,19 +32,8 @@ action "Tag" {
 
 action "Publish" {
   needs = "Tag"
-  uses = "nuxt/actions-yarn@master"
+  uses = "kingscooty/actions-yarn-cy@master"
   args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
-}
-```
-
-## Node Versions
-
-Specify different branch name in `uses` to leverage node version.
-
-```hcl
-action "Build" {
-  uses = "nuxt/actions-yarn@node-11"
-  args = "install"
 }
 ```
